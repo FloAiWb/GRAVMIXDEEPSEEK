@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GravMix - Эксклюзивная гравировка 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg">
+        <div class="parallax-layer layer-1"></div>
+        <div class="parallax-layer layer-2"></div>
+        <div class="parallax-layer layer-3"></div>
+    </div>
+
+    <!-- 3D Background -->
+    <canvas id="product-canvas"></canvas>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo"><i class="fas fa-gem"></i> GravMix</a>
+        <nav class="nav-links">
+            <a href="#home">Главная</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#gallery">Примеры работ</a>
+            <a href="#testimonials">Отзывы</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-btn" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="contact-btn"><i class="fas fa-pen"></i> Заказать</button>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><span>Эксклюзивная гравировка</span>на любых изделиях</h1>
+            <p>Создаем персонализированные подарки с уникальной гравировкой на кольцах, часах, зажигалках и других изделиях. Премиум качество, быстрая доставка по всей России.</p>
+            <div class="hero-btns">
+                <a href="#catalog" class="btn btn-primary"><i class="fas fa-gem"></i> Выбрать изделие</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                <rect x="100" y="100" width="600" height="400" rx="30" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="10 5"/>
+                <circle cx="200" cy="250" r="70" fill="none" stroke="#d4af37" stroke-width="3"/>
+                <circle cx="400" cy="250" r="70" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="10 5"/>
+                <circle cx="600" cy="250" r="70" fill="none" stroke="#d4af37" stroke-width="3"/>
+                <path d="M200 320 L600 320" stroke="#d4af37" stroke-width="3" stroke-dasharray="10 5"/>
+                <path d="M200 180 L600 180" stroke="#d4af37" stroke-width="3" stroke-dasharray="10 5"/>
+                <circle cx="400" cy="400" r="50" fill="#d4af37" opacity="0.7"/>
+                <text x="400" y="400" text-anchor="middle" fill="#0c0c14" font-size="24" font-weight="bold">GM</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section" id="catalog">
+        <div class="section-title">
+            <h2>Популярные изделия</h2>
+            <p>Выберите изделие для гравировки или закажите готовый вариант из нашей коллекции</p>
+        </div>
+        <div id="catalog-container"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-title">
+            <h2>Примеры наших работ</h2>
+            <p>Наши лучшие работы с гравировкой на различных изделиях</p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item" style="background: linear-gradient(45deg, #3a1c71, #d76d77);">
+                <div class="gallery-overlay">
+                    <h3>Обручальные кольца</h3>
+                    <p>Гравировка имен и даты свадьбы</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(45deg, #2193b0, #6dd5ed);">
+                <div class="gallery-overlay">
+                    <h3>Серебряный кулон</h3>
+                    <p>Персонализированная гравировка</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(45deg, #834d9b, #d04ed6);">
+                <div class="gallery-overlay">
+                    <h3>Наручные часы</h3>
+                    <p>Гравировка на задней крышке</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(45deg, #ff416c, #ff4b2b);">
+                <div class="gallery-overlay">
+                    <h3>Зажигалка Zippo</h3>
+                    <p>Логотип компании</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(45deg, #1d976c, #93f9b9);">
+                <div class="gallery-overlay">
+                    <h3>Металлическая фляжка</h3>
+                    <p>Гравировка инициалов</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(45deg, #4b6cb7, #182848);">
+                <div class="gallery-overlay">
+                    <h3>Перьевая ручка</h3>
+                    <p>Гравировка имени владельца</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Отзывы клиентов</h2>
+            <p>Что говорят наши покупатели о качестве гравировки</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background: linear-gradient(45deg, #ff9a9e, #fad0c4);"></div>
+                    <div class="testimonial-info">
+                        <h4>Анна Петрова</h4>
+                        <p>Заказала обручальные кольца</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Заказывали обручальные кольца с гравировкой даты свадьбы. Результат превзошел все ожидания! Гравировка идеально ровная, глубоко нанесена. Качество работы отличное, доставили вовремя. Обязательно закажу еще подарки у GravMix."
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background: linear-gradient(45deg, #a1c4fd, #c2e9fb);"></div>
+                    <div class="testimonial-info">
+                        <h4>Дмитрий Смирнов</h4>
+                        <p>Заказал зажигалку Zippo</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Подарил другу зажигалку с гравировкой на день рождения. Он был в восторге! Качество гравировки отличное, все линии четкие, как на фото. Сервис на высоте - помогли с выбором шрифта. Буду рекомендовать GravMix всем знакомым."
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);"></div>
+                    <div class="testimonial-info">
+                        <h4>Ольга Иванова</h4>
+                        <p>Заказала подвеску для дочери</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Заказала серебряную подвеску с именем дочки. Изделие пришло быстро, упаковка была надежная и презентабельная. Гравировка очень аккуратная и красивая. Дочка носит не снимая. Спасибо за качественную работу и внимание к деталям!"
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами для заказа или консультации</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Наши контакты</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Адрес</h4>
+                            <p>Староминская набережная 133а</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/79996930620">+7 (999) 693-06-20</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Телефон</h4>
+                            <a href="tel:+79996930620">+7 (999) 693-06-20</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:info@gravmix.ru">info@gravmix.ru</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Часы работы</h4>
+                            <p>Пн-Пт: 10:00 - 20:00<br>Сб-Вс: 11:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://t.me/gravmixTT" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.wildberries.ru/seller/1318937" target="_blank"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="https://www.ozon.ru/seller/s-lyubovyu-2225969/?miniapp=seller_2225969" target="_blank"><i class="fab fa-aws"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.8rem;">Отправить запрос</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Сообщение или описание заказа" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Отправить запрос</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>GravMix</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Эксклюзивная гравировка на ювелирных изделиях и аксессуарах с доставкой по всей России.</p>
+                <div class="social-links">
+                    <a href="https://t.me/gravmixTT" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.wildberries.ru/seller/1318937" target="_blank"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="https://www.ozon.ru/seller/s-lyubovyu-2225969/?miniapp=seller_2225969" target="_blank"><i class="fab fa-aws"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Каталог</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Кольца</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Подвески</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Часы</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Зажигалки</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ручки</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Информация</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Как заказать</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Доставка и оплата</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Гарантии</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+79996930620"><i class="fas fa-phone"></i> +7 (999) 693-06-20</a></li>
+                    <li><a href="https://wa.me/79996930620"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="mailto:info@gravmix.ru"><i class="fas fa-envelope"></i> info@gravmix.ru</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Староминская наб. 133а</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GravMix. Все права защищены. Сделано с <i class="fas fa-heart" style="color: var(--accent);"></i> в России</p>
+        </div>
+    </footer>
+
+    <!-- 3D Product Viewer -->
+    <div class="product-viewer">
+        <div class="viewer-container">
+            <button class="close-viewer"><i class="fas fa-times"></i></button>
+            <canvas id="viewer-canvas"></canvas>
+        </div>
+    </div>
+    <script src="catalog.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
